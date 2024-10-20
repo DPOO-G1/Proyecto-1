@@ -1,5 +1,6 @@
 package actividades;
 
+import java.util.Date;
 import java.util.List;
 
 public class Recurso extends Actividad {
@@ -7,9 +8,15 @@ public class Recurso extends Actividad {
 	String tipoRecurso;
 	
 	public Recurso(String descripcion, String objetivo, String nivelDificultad, int duracion,
-			List<Actividad> actividadesPrerrequisito, String fechaLim, List<Actividad> actividadesOpcionales, String tipoRecurso) {
-		super(descripcion, objetivo, nivelDificultad, duracion, actividadesPrerrequisito, fechaLim, actividadesOpcionales);
+			 Date fechaLim,  boolean obligatoria, String tipoRecurso) {
+		super(descripcion, objetivo, nivelDificultad, duracion, fechaLim, obligatoria);
 		this.tipoRecurso = tipoRecurso;
+	}
+
+	@Override
+	public void menu() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

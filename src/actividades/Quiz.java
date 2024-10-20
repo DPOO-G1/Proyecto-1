@@ -1,20 +1,29 @@
 package actividades;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Quiz extends Actividad {
 	
 	List<PreguntaCerrada> preguntas;
+	double calificacionMin;
 	
 	public Quiz(String descripcion, String objetivo, String nivelDificultad, int duracion,
-			List<Actividad> actividadesPrerrequisito, String fechaLim, List<Actividad> actividadesOpcionales, List<PreguntaCerrada> preguntas) {
-		super(descripcion, objetivo, nivelDificultad, duracion, actividadesPrerrequisito, fechaLim, actividadesOpcionales);
+			 Date fechaLim,double calificacionMin, boolean obligatoria) {
+		super(descripcion, objetivo, nivelDificultad, duracion, fechaLim, obligatoria);
 		
-		this.preguntas = preguntas; 
+		this.preguntas = new ArrayList<>();
+		this.calificacionMin = calificacionMin;
+	}
+	
+	public void menu() {
+		
 	}
 
-	
-	
+	public void addPregunta(PreguntaCerrada pregunta) {
+		this.preguntas.add(pregunta);
+	}
 	
 
 }
